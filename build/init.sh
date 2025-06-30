@@ -30,6 +30,7 @@ else
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
   chmod u+x nvim-linux-x86_64.appimage
   ./nvim-linux-x86_64.appimage --appimage-extract
+  rm nvim-linux-x86_64.appimage
   mv squashfs-root /
   ln -s /squashfs-root/AppRun /usr/bin/nvim
 fi

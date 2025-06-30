@@ -1,10 +1,10 @@
 version: "3.8"
 services:
 
-  container:
-    image: ngvantuhy/dev:latest
+  dev-github:
+    image: ghcr.io/nguyenvantuhym/dev-containner-env:latest
     restart: always
-    container_name: dev
+    container_name: dev-github
     command: ["fish"]
     privileged: true
     tty: true
@@ -20,10 +20,10 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
     network_mode: host
-  app:
-    image: ngvantuhy/dev:latest
+  app-github:
+    image: ghcr.io/nguyenvantuhym/dev-containner-env:latest
     restart: always
-    container_name: app
+    container_name: app-github
     command: ["fish"]
     privileged: true
     tty: true
@@ -41,10 +41,10 @@ services:
     network_mode: host
 
 
-  bun:
-    image: ngvantuhy/dev:latest
+  bun-github:
+    image: ghcr.io/nguyenvantuhym/dev-containner-env:latest
     restart: always
-    container_name: bun
+    container_name: bun-github
     command: ["fish"]
     privileged: true
     tty: true
