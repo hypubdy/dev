@@ -19,7 +19,7 @@ services:
       - mydata:/data
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-    network_mode: host
+    # network_mode: host
 
   app:
     image: ghcr.io/hypubdy/dev:latest
@@ -39,7 +39,7 @@ services:
       - mydata:/data
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-    network_mode: host
+    # network_mode: host
 
   bun:
     image: ghcr.io/hypubdy/dev:latest
@@ -59,8 +59,6 @@ services:
       - mydata:/data
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-    network_mode: host
+    # network_mode: host
 volumes:
   mydata:
-
-
