@@ -14,3 +14,5 @@ RUN ./init.sh
 
 RUN mkdir -p /root/.config/nvim
 RUN git clone https://github.com/LazyVim/starter ~/.config/nvim
+
+CMD ["fish"]
