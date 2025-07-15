@@ -39,26 +39,6 @@ services:
       - mydata:/data
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-    # network_mode: host
-
-  bun:
-    image: ghcr.io/hypubdy/dev:latest
-    restart: always
-    container_name: bun
-    command: ["fish"]
-    privileged: true
-    tty: true
-    stdin_open: true
-    environment:
-      - TERM=xterm-256color
-      - TZ=Asia/Bangkok
-    volumes:
-      # - /var/run/docker.sock:/var/run/docker.sock
-      # - /usr/bin/docker:/usr/bin/docker
-      - ./src:/root/workspace
-      - mydata:/data
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
-    # network_mode: host
+    network_mode: host
 volumes:
   mydata:
