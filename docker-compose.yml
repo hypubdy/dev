@@ -12,6 +12,7 @@ services:
       - TERM=xterm-256color
       - TZ=Asia/Bangkok
     volumes:
+      - dev_data:/var/lib/docker
       # - /var/run/docker.sock:/var/run/docker.sock
       # - /usr/bin/docker:/usr/bin/docker
       - ./src:/root/workspace
@@ -33,17 +34,17 @@ services:
       - TERM=xterm-256color
       - TZ=Asia/Bangkok
     volumes:
+      - app_data:/var/lib/docker
       # - /var/run/docker.sock:/var/run/docker.sock
       # - /usr/bin/docker:/usr/bin/docker
       - ./app:/root/app
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
     # network_mode: host
-volumes:
-  mydata:
     networks:
       - dev-network
-
+volumes:
+  dev_data:
+  app_data:
 networks:
   dev-network:
-    external: true
