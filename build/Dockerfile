@@ -39,7 +39,7 @@ RUN wget --no-verbose -O /tmp/apache-maven.tar.gz \
     rm /tmp/apache-maven.tar.gz
 
 # Thiết lập thư mục làm việc
-WORKDIR /app
+WORKDIR /root/workspace
 
 # Xác minh cài đặt
 RUN java -version && mvn -version
