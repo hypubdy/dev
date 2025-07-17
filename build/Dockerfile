@@ -4,6 +4,9 @@ RUN apt update && apt install -y \
     fish \
     curl \
     git \
+    iputils-ping \
+    net-tools \
+    telnet \
     build-essential \
     python3 \
     python3-pip
