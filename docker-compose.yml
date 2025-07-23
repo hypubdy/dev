@@ -12,6 +12,8 @@ services:
       - TERM=xterm-256color
       - TZ=Asia/Bangkok
     volumes:
+      - cursor_data:/root/.cursor
+      - vscode_data:/root/.vscode
       - dev_data:/var/lib/docker
       # - /var/run/docker.sock:/var/run/docker.sock
       # - /usr/bin/docker:/usr/bin/docker
@@ -43,7 +45,21 @@ services:
     # network_mode: host
     networks:
       - dev-network
+
+  nginx:
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+    networks:
+      - dev-network
+
 volumes:
+  cursor_data:
+  vscode_data:
   dev_data:
   app_data:
 networks:
